@@ -12,11 +12,11 @@ platform: x64
 install:
   # by default, all script lines are interpreted as batch
   - if not exist "c:\projects" mkdir c:\projects
-  - if not exist "c:\projects\ss" mkdir c:\projects\ss
   - if not exist "c:\projects\ss-build" mkdir c:\projects\ss-build
   - if not exist "c:\projects\ss-install" mkdir c:\projects\ss-install
   - powershell -Command "Invoke-WebRequest https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/v1.3.1.tar.gz -OutFile c:\projects\ss-source.zip"
-  - dir c:\projects
+  - cd c:\projects
+  - dir
   - tar xzvf ss-source.zip ss\
 
 before_build:
