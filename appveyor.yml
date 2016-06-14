@@ -16,8 +16,8 @@ install:
   - if not exist "c:\projects\ss-install" mkdir c:\projects\ss-install
   - powershell -Command "Invoke-WebRequest https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/v1.3.1.tar.gz -OutFile c:\projects\ss-source.zip"
   - cd c:\projects
+  - tar xzvf ss-source.zip
   - dir
-  - tar xzvf ss-source.zip ss\
 
 before_build:
   - cd c:\projects\ss
