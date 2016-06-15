@@ -28,15 +28,16 @@ install:
   - ECHO "Installed SDKs:"
   - ps: "ls \"C:/Program Files/Microsoft SDKs/Windows\""
 
-  - powershell -Command "Invoke-WebRequest https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/v1.3.1.tar.gz -OutFile c:\projects\ss-source.zip"
-  - cd c:\projects
-  - tar xzf ss-source.zip
-
   # This upates conda and installs the necessary packages.
+  - cd c:\projects\scikit-umfpack\
   - powershell .\\appveyor\\install.ps1
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python --version
   - python -c \"import struct; print(struct.calcsize('P') * 8)\"
+
+  - powershell -Command "Invoke-WebRequest https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/v1.3.1.tar.gz -OutFile c:\projects\ss-source.zip"
+  - cd c:\projects
+  - tar xzf ss-source.zip
 
 before_build:
   - cd suitesparse-metis-for-windows-1.3.1
