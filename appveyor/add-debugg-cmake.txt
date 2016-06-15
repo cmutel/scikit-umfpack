@@ -1,0 +1,38 @@
+
+# if you are building in-source, this is the same as CMAKE_SOURCE_DIR, otherwise 
+# this is the top level directory of your build tree 
+MESSAGE( STATUS "CMAKE_BINARY_DIR:         " ${CMAKE_BINARY_DIR} )
+
+# if you are building in-source, this is the same as CMAKE_CURRENT_SOURCE_DIR, otherwise this 
+# is the directory where the compiled or generated files from the current CMakeLists.txt will go to 
+MESSAGE( STATUS "CMAKE_CURRENT_BINARY_DIR: " ${CMAKE_CURRENT_BINARY_DIR} )
+
+# this is the directory, from which cmake was started, i.e. the top level source directory 
+MESSAGE( STATUS "CMAKE_SOURCE_DIR:         " ${CMAKE_SOURCE_DIR} )
+
+# this is the directory where the currently processed CMakeLists.txt is located in 
+MESSAGE( STATUS "CMAKE_CURRENT_SOURCE_DIR: " ${CMAKE_CURRENT_SOURCE_DIR} )
+
+# contains the full path to the top level directory of your build tree 
+MESSAGE( STATUS "PROJECT_BINARY_DIR: " ${PROJECT_BINARY_DIR} )
+
+# contains the full path to the root of your project source directory,
+# i.e. to the nearest directory where CMakeLists.txt contains the PROJECT() command 
+MESSAGE( STATUS "PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR} )
+
+MESSAGE( STATUS "CMAKE_SYSTEM: " ${CMAKE_SYSTEM} )
+MESSAGE( STATUS "CMAKE_SYSTEM_PROCESSOR: " ${CMAKE_SYSTEM_PROCESSOR} )
+
+# Microsoft compiler 
+MESSAGE( STATUS "MSVC: " ${MSVC} )
+MESSAGE( STATUS "MSVC_IDE: " ${MSVC_IDE} )
+MESSAGE( STATUS "MSVC60: " ${MSVC60} )
+MESSAGE( STATUS "MSVC70: " ${MSVC70} )
+MESSAGE( STATUS "MSVC71: " ${MSVC71} )
+MESSAGE( STATUS "MSVC80: " ${MSVC80} )
+MESSAGE( STATUS "CMAKE_COMPILER_2005: " ${CMAKE_COMPILER_2005} )
+MESSAGE( STATUS "MINGW: " ${MINGW} )
+
+MESSAGE( STATUS "Using CUDA: " ${WITH_CUDA} )
+MESSAGE( STATUS "LAPACK Directory: " ${SuiteSparse_LAPACK_BLAS_LIB_DIR} )
+MESSAGE( STATUS "Install prefix: " ${SUITESPARSE_INSTALL_PREFIX} )

@@ -15,9 +15,11 @@ install:
   - if not exist "c:\projects\ss-install" mkdir c:\projects\ss-install
   - powershell -Command "Invoke-WebRequest https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/v1.3.1.tar.gz -OutFile c:\projects\ss-source.zip"
   - cd c:\projects
-  - tar xzvf ss-source.zip
+  - tar xzf ss-source.zip
 
 before_build:
   - cd suitesparse-metis-for-windows-1.3.1
+  - type c:\projects\scikit-umfpack\appveyor\add-debugg-cmake.txt >> CMakeLists.txt
   - cmake -G "Visual Studio 14 2015 Win64" -DSUITESPARSE_INSTALL_PREFIX:PATH=c:\projects\ss-install
   - dir
+  - Msbuild.exe SuiteSparseProject.sln
