@@ -44,12 +44,13 @@ install:
   - type c:\projects\scikit-umfpack\appveyor\add-debugg-cmake.txt >> CMakeLists.txt
   - cmake -G "Visual Studio 14 2015 Win64" -DSUITESPARSE_INSTALL_PREFIX:PATH=c:\projects\suitesparse-install
   - dir
-  - Msbuild.exe /clp:Summary SuiteSparseProject.sln
+  - Msbuild.exe /verbosity:minimal SuiteSparseProject.sln
   - dir c:\projects\suitesparse-install\
   - dir c:\projects\suitesparse-src\
   - dir c:\projects\suitesparse-src\lib\Debug\
-  - SET PATH=%PATH%;c:\projects\suitesparse-src\lib*\lapack_blas_windows\;c:\projects\suitesparse-src\lib*
-  - SET UMFPACK=c:\projects\suitesparse-src
+  - SET PATH=%PATH%;c:\projects\suitesparse-src\lapack_blas_windows\;c:\projects\suitesparse-src\lapack_blas_windows\x64\;c:\projects\suitesparse-src\lib\Debug\
+  - SET UMFPACK=c:\projects\suitesparse-src\lib\Debug\
+  - SET BLAS=c:\projects\suitesparse-src\lapack_blas_windows\
 
 build: false
 
