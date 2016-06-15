@@ -47,6 +47,7 @@ install:
   - Msbuild.exe /clp:Summary SuiteSparseProject.sln
   - dir c:\projects\suitesparse-install\
   - dir c:\projects\suitesparse-src\
+  - dir c:\projects\suitesparse-src\lib\
   - SET PATH=%PATH%;c:\projects\suitesparse-src\lib*\lapack_blas_windows\;c:\projects\suitesparse-src\lib*
   - SET UMFPACK=c:\projects\suitesparse-src
 
