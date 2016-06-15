@@ -33,7 +33,7 @@ install:
   - powershell .\\appveyor\\install.ps1
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python --version
-  - python -c \"import struct; print(struct.calcsize('P') * 8)\"
+  - python -c "import struct; print(struct.calcsize('P') * 8)"
 
   - powershell -Command "Invoke-WebRequest https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/v1.3.1.tar.gz -OutFile c:\projects\ss-source.zip"
   - cd c:\projects
