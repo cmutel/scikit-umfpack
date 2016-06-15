@@ -12,6 +12,9 @@ def configuration(parent_package='',top_path=None):
 
     umf_info = get_info('umfpack', notfound_action=1)
 
+    print(get_info('blas_opt'))
+    print(get_info('umfpack'))
+
     ## The following addition is needed when linking against a umfpack built
     ## from the latest SparseSuite. Not (strictly) needed when linking against
     ## the version in the ubuntu repositories.
